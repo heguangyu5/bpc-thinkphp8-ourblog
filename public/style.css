@@ -1,0 +1,27 @@
+.container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+form {
+    padding: 15px;
+}
+
+form > label {
+    width: 200px;
+    display: inline-block;
+}
+
+p {
+    padding-bottom: 15px;
+}
+
+.error {
+    color: red;
+}
