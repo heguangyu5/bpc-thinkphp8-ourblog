@@ -24,7 +24,7 @@ return array(
 
 Please activate your account by click the link below:
 
-    http://localhost/ourblog/activate.php?id=2&token=abcd1234abcd1234abcd1234abcd1234
+    http://tp8.me/activate/?id=2&token=abcd1234abcd1234abcd1234abcd1234
 
 Thanks.'
         )

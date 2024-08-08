@@ -75,7 +75,7 @@ class OurBlog_User
 
 Please activate your account by click the link below:
 
-    http://localhost/ourblog/activate.php?id=$uid&token=$regToken
+    http://tp8.me/activate/?id=$uid&token=$regToken
 
 Thanks."
             ));
