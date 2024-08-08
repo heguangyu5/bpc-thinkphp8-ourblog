@@ -13,7 +13,7 @@
         <a href="/admin.logout">Logout</a>
     </div>
     <div class="nav-links">
-        <a href="/">Home</a>
+        <a href="/admin.index">Home</a>
         <?php
             $categoryRows = \think\facade\Db::table('category')->field('id,name')->select();
             foreach ($categoryRows as $row) {
