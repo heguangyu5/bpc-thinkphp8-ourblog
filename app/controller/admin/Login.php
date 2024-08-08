@@ -9,8 +9,6 @@ use think\facade\View;
 
 class Login extends BaseController
 {
-    protected $middleware = array(\think\middleware\SessionInit::class);
-
     public function index()
     {
         if (Session::has('id')) {

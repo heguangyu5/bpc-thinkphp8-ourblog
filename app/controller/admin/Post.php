@@ -11,7 +11,6 @@ use think\facade\Db;
 class Post extends BaseController
 {
     protected $middleware = array(
-        \think\middleware\SessionInit::class,
         \app\middleware\Auth::class
     );
 

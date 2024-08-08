@@ -9,7 +9,6 @@ use think\facade\Session;
 class Logout extends BaseController
 {
     protected $middleware = array(
-        \think\middleware\SessionInit::class,
         \app\middleware\Auth::class
     );
 
