@@ -1,25 +1,35 @@
 <?php
 
-require "think-orm-stubs/load_stubs.php";
+define('TEST_ROOT_DIR', getcwd());
+
+if (defined('__BPC__')) {
+    // do nothing
+} else {
+    require "think-orm-stubs/load_stubs.php";
+}
 
 spl_autoload_register(function ($class) {
-    if (strncmp($class, 'think\\', 6) === 0) {
-        $includePath = '/usr/share/php';
-        $thinkDirs   = array('think-orm', 'think-helper');
-        $file        = str_replace('\\', '/', $class) . '.php';
-        foreach ($thinkDirs as $dir) {
-            $path = "$includePath/$dir/$file";
-            if (file_exists($path)) {
-                require $path;
-                return;
-            }
-        }
+    if (defined('__BPC__')) {
+        require str_replace(array('_', '\\'), '/', $class) . '.php';
     } else {
-        require str_replace('_', '/', $class) . '.php';
+        if (strncmp($class, 'think\\', 6) === 0) {
+            $includePath = '/usr/share/php';
+            $thinkDirs   = array('think-orm', 'think-helper');
+            $file        = str_replace('\\', '/', $class) . '.php';
+            foreach ($thinkDirs as $dir) {
+                $path = "$includePath/$dir/$file";
+                if (file_exists($path)) {
+                    require $path;
+                    return;
+                }
+            }
+        } else {
+            require str_replace('_', '/', $class) . '.php';
+        }
     }
 });
 
-\think\facade\Db::setConfig(array(
+think\facade\Db::setConfig(array(
     'default'     => 'mysql',
     'connections' => array(
         'mysql' => array(
