@@ -1,13 +1,18 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>OurBlog - Sign Up</title>
+<title>OurBlog - Sign In</title>
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
 <div class="container">
-    <h2>OurBlog Sign Up</h2>
+    <h2>OurBlog Sign In</h2>
+    <?php
+        if (isset($_GET['activate']) && $_GET['activate'] == 'success') {
+            echo '<p class="success">activate success!</p>';
+        }
+    ?>
     <form method="POST">
         <?php
             if ($error) {
@@ -15,10 +20,8 @@
             }
         ?>
         <label>Email:</label><input type="email" name="email" required><br><br>
-        <label>Username:</label><input type="text" name="username" required><br><br>
         <label>Password:</label><input type="password" name="password" required><br><br>
-        <label>Confirm Password:</label><input type="password" name="confirmPassword" required><br><br>
-        <label></label><input type="submit" value="Sign Up">
+        <label></label><input type="submit" value="Sign In">
     </form>
 </div>
 

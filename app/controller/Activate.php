@@ -10,7 +10,7 @@ class Activate extends BaseController
     {
         try {
             \OurBlog_User::activate($_GET);
-            return redirect('/admin/login?activate=success');
+            return redirect('/admin.login?activate=success');
         } catch (\InvalidArgumentException $e) {
             return $e->getMessage();
         } catch (\Exception $e) {

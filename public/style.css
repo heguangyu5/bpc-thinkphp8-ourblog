@@ -25,3 +25,50 @@ p {
 .error {
     color: red;
 }
+
+.success {
+    color: green;
+}
+
+.nav-user {
+    float: right;
+}
+
+.nav-links {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.nav-links > a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+}
+
+table th, table td {
+    border-bottom: 1px solid #eee;
+    padding: 5px;
+}
+
+.posts > a {
+    display: block;
+    line-height: 32px;
+    text-decoration: none;
+}
+
+.posts > a:hover {
+    text-decoration: underline;
+}
+
+.post-meta {
+    font-size: .9em;
+    color: #444;
+}
+
+.post-content {
+    white-space: pre-wrap;
+    font-size: .9em;
+}
