@@ -22,6 +22,7 @@ class Login extends BaseController
             try {
                 $userInfo = \OurBlog_User::auth($_POST);
                 if ($userInfo) {
+                    Session::regenerate(true);
                     Session::set('id',       $userInfo['id']);
                     Session::set('username', $userInfo['username']);
                     return redirect('/admin.index');
