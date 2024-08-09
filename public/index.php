@@ -15,7 +15,7 @@ namespace think;
 require __DIR__ . '/../vendor/autoload.php';
 
 // 执行HTTP应用并响应
-$http = (new App())->http;
+$http = (new App(dirname(__DIR__), realpath($_SERVER['DOCUMENT_ROOT'] . '/../runtime/')))->http;
 
 $response = $http->run();
 
