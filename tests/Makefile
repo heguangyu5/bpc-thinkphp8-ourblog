@@ -8,6 +8,7 @@ test: $(FILES)
 	    -u think-helper \
 	    -u psr-simplecache \
 	    -u think-orm \
+	    -u think-orm-stubs \
 	    -u ourblog \
 	    -d display_errors=on \
 	    -d suppress_runtime_too_many_arguments_warning=1 \
