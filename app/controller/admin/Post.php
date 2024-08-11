@@ -50,7 +50,7 @@ class Post extends BaseController
 
         try {
             if (!isset($_GET['id'])) {
-                throw new InvalidArgumentException('missing required key id');
+                throw new \InvalidArgumentException('missing required key id');
             }
             $id = \OurBlog_Post::DBAIPK($_GET['id']);
             if (!$id) {
@@ -84,7 +84,7 @@ class Post extends BaseController
             return redirect('/admin.index');
         } catch (\InvalidArgumentException $e) {
             return $e->getMessage();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return 'SERVER ERROR';
         }
     }

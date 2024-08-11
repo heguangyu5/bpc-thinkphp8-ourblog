@@ -1,10 +1,17 @@
 <?php
 
-require 'think-helper/think/helper.php';
+if (defined('__BPC__')) {
+    require 'think/helper.php';
+} else {
+    require 'think-helper/think/helper.php';
+}
 
 spl_autoload_register(function ($class) {
     if (defined('__BPC__')) {
-        require str_replace(array('_', '\\'), '/', $class) . '.php';
+        $file = str_replace(array('_', '\\'), '/', $class) . '.php';
+        if (include_silent($file) === false) {
+            include "topthink-framework/$file";
+        }
     } else {
         if (strncmp($class, 'think\\', 6) === 0) {
             $includePath = '/usr/share/php';
