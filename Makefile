@@ -5,6 +5,7 @@ all:
 
 tp8-ourblog-althttpd:
 	bpc -v \
+	    --static                \
 	    -c ../bpc.conf          \
 	    --althttpd              \
 	    -o tp8-ourblog-althttpd \
